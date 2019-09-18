@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <input type="text" id="in1">
+    <input type="text" id="in2">
+    <button id="btn" >计算</button>
+    <script>
+       alert('必须输入数字');
+        var in1 =document.getElementById('in1');
+        var in2 =document.getElementById('in2');
+        var btn =document.getElementById('btn');
+      btn.onclick=function(){
+        in1=parseInt(Number(in1.value));
+        in2=parseInt(Number(in2.value));
+        c=in1+in2;
+        console.log(c);
+        show.innerHTML=c;
+      }
+    </script>
+</body>
+</html>
