@@ -23,6 +23,11 @@ p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6{
 	height: 120px;
 	margin:30px 0 10px;
 }
+.em img{
+	position:fixed;
+    top:700px;
+    right:20px;
+}
 .nav{
 	height:45px;
     background-color: #3A4BA7;
