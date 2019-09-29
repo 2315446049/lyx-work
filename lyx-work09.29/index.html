@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    	
+    	.box{
+    		margin: 100px auto;
+    		width: 550px;
+    		height: 400px;
+    		background-color: aliceblue;
+    		padding-left: 200px;
+    		padding-top: 50px;
+    	}
+    	input{
+    		width:350px;
+    		height:40px;
+    	}
+    	span{
+    		color: red;
+    	}
+    	#in3{
+    		margin-top:30px;
+    		width:350px;
+    		height:40px;
+    		background-color: dodgerblue;	
+    	}
+    	#in3>a{
+    		color: white;
+    		text-decoration: none;
+    		font-size: 15px;
+    	}
+    </style>
+</head>
+<body>
+	<div class="box">
+		<p>请输入用户名</p>
+        <input type="text"  id="in1"  value=""><span href="" id="span" style="display: none;">该用户名无法注册</span><br>
+        <p>请输入密码：</p> 
+        <input type="password"  id="in2"><br>
+        <button  id="in3"><a href="#">注册并登陆</a></button>
+	</div>
+   
+    <script>
+         var in1=document.getElementById('in1');
+         var in2=document.getElementById('in2');
+         var in3=document.getElementById('in3');
+         var span=document.getElementById('span');
+         var name=['tom','jack','lili'];
+         in1.onblur=function(){
+            if(name.indexOf(in1.value) !=-1){ 
+               span.style.display='inline-block';
+            }else{
+            	span.style.display='none';
+            }
+        }
+         in3.onclick=function(){
+             if((in1.value&&in2.value)==''){
+               alert('请输入用户名或密码');
+             }else if(name.indexOf(in1.value) !=-1){
+                alert('请重新修改用户名');
+             }else{
+             	alert('注册成功');
+             }
+         }
+    </script>
+</body>
+</html>
