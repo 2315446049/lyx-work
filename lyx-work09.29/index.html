@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    	
+    	.box{
+    		margin: 100px auto;
+    		width: 550px;
+    		height: 400px;
+    		background-color: aliceblue;
+    		padding-left: 200px;
+    	}
+    	#in1{
+    		margin-top:100px;
+    		width: 200px;
+    		height:30px;
+    		margin-bottom: 40px;
+    	}
+    	#in2{
+    		width: 200px;
+    		height:30px;
+    	}
+    	span{
+    		color: red;
+    	}
+    	#in3{
+    		margin-top:50px;
+    		margin-left: 130px;
+    	}
+    </style>
+</head>
+<body>
+	<div class="box">
+		 用户名：
+        <input type="text"  id="in1"  value=""><span href="" id="span" style="display: none;">该用户名无法注册</span><br>
+                密&nbsp;&nbsp;&nbsp;码：
+        <input type="password"  id="in2"><br>
+        <input type="submit" id="in3">
+	</div>
+   
+    <script>
+         var in1=document.getElementById('in1');
+         var in2=document.getElementById('in2');
+         var in3=document.getElementById('in3');
+         var span=document.getElementById('span');
+         var name=['tom','jack','lili'];
+         in1.onblur=function(){
+            if(name.indexOf(in1.value) !=-1){ 
+               span.style.display='inline-block';
+            }else{
+            	span.style.display='none';
+            }
+        }
+         in3.onclick=function(){
+             if((in1.value&&in2.value)==''){
+               alert('请输入用户名或密码');
+             }else if(name.indexOf(in1.value) !=-1){
+                alert('请重新修改用户名');
+             }else{
+             	alert('注册成功');
+             }
+         }
+    </script>
+</body>
+</html>
