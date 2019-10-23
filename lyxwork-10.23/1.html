@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    	.one{
+    		width: 1000px;
+            height: 1000px;
+    		background-color:#F4F4F4;
+    		padding:200px;
+    		box-sizing: border-box;
+    	}
+        #box{
+            overflow: hidden;
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color:#F4F4F4;
+            box-sizing: border-box;
+        }
+        #box > div{
+            width:100px;
+            height:100px;
+            color:rgba(0,0,0,0);
+            position:absolute;
+            background-image: url();
+            background-size: 100px;
+            
+        }
+        .active{
+            transform: scale(0.88);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="one">
+    	<div id="box"></div>
+    </div>
+    <script>
+        var arr=[
+            [1,2,3,0,4,5],
+            [3,4,2,5,0,1],
+            [4,3,1,5,2,0],
+            [1,0,4,2,3,5],
+            [5,4,3,2,1,0],
+            [2,3,5,4,0,1]
+        ];
+        var narr=[];
+        var box=document.getElementById('box');
+        for(var i=0;i<6;i++){
+            for(var j=0;j<6;j++){
+                 var div=document.createElement('div');
+                 box.appendChild(div);
+                 div.style.top=i*100+'px';
+                 div.style.left=j*100+'px';
+                 div.innerHTML = arr[i][j];
+                 div.style.backgroundImage='url('+arr[i][j]+'.png)';
+                 div.onclick=function(){
+                     if(narr.length<2){
+                        if(this.className=='active'){
+                            alert('已选过');
+                        }else{
+                             narr.push(Number(this.innerHTML));
+                             this.className='active';
+                        }
+                     }else{
+                         narr=[];
+                         var ss=box.querySelectorAll('#box>div');
+                         for(var z=0;z<ss.length;z++){
+                             ss[z].className='';
+                         }
+                         narr.push(Number(this.innerHTML));
+                         this.className='active';
+                         
+                     }
+                     if(narr.length==2){
+                         if(narr[0]-narr[1]==0){
+                            var ww=box.querySelectorAll('.active');
+                            for(var e=0;e<ww.length;e++){
+                                ww[e].innerHTML='';
+                                ww[e].className='';
+                                ww[e].style.backgroundImage='';
+                                ww[e].style.backgroundColor='#F4F4F4';
+                                ww[e].style.border='#F4F4F4';
+                            }
+                         }
+                     }
+                console.log(narr);
+                 }
+            }
+        }
+    </script>
+</body>
+</html>
