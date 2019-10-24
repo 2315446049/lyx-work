@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+		</style>
+	</head>
+	<body>
+		<input type="text" id="inp">
+		<button id="btn1">签到</button>
+		<button id="btn2">未签到</button>
+		<script>
+			var inp = document.getElementById('inp');
+			var btn1 = document.getElementById('btn1');
+			var btn2 = document.getElementById('btn2');
+			var str = '刘妍香李淼新焦迈奇张云龙';
+			var non = [];
+			btn1.onclick = function() {
+				non.push(inp.value);
+				inp.value = "";
+				console.log(non);
+			}
+			btn2.onclick = function() {
+				var reg = new RegExp(non.join('、'),"g");
+				var nonet =str.replace(reg,"");
+				document.body.innerHTML = '未签到的人有:' +nonet;
+			}
+		</script>
+	</body>
+
+</html>
