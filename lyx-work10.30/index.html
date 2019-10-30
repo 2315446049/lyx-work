@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+        span{
+            display:inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            border-radius: 50%;
+            border: 5px solid white;
+            opacity: 1;
+            z-index: 2222;
+            background-color: white;
+        }
+        div{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 5px solid white;
+            opacity:0;
+        }
+        
+    </style>
+</head>
+<body>
+     <span id="" style="background-color: red"  data-tt="aa"></span>
+     <div id="myd"  style="background-color: chocolate"  data-tt="aa"></div>
+     <div id="myd"  style="background-color: yellowgreen"  data-tt="aa"></div>
+     <div id="myd"  style="background-color: forestgreen" data-tt="aa" ></div>
+     <div id="myd"  style="background-color: skyblue" data-tt="aa" ></div>
+     <div id="myd"  style="background-color: teal" data-tt="aa" ></div>
+     <div id="myd"  style="background-color: cornflowerblue"  data-tt="aa"></div>
+     <div id="myd"  style="background-color: palevioletred"  data-tt="aa"></div>
+     <div id="myd"  style="background-color: rebeccapurple"  data-tt="aa"></div>
+     <div id="myd"  style="background-color: hotpink"  data-tt="aa"></div>
+    <script>
+    	
+        $("span").click(function(){
+          var opc=$("div").css("opacity");
+            if(opc==0){
+            	 $("div").css("opacity","1");
+            	 $("body").css("backgroundColor"," white");
+            	 
+            }else{ 
+            	 $("div").css("opacity","0");
+            	 $("body").css("backgroundColor","red");
+            }
+            
+        })
+        $("div:nth-child(2)").click(function(){
+        	console.log($("body").css("backgroundColor","chocolate"));
+        })
+        $("div:nth-child(3)").click(function(){
+        	console.log($("body").css("backgroundColor","yellowgreen "));
+        })
+        $("div:nth-child(4)").click(function(){
+        	console.log($("body").css("backgroundColor","forestgreen"));
+        })
+        $("div:nth-child(5)").click(function(){
+        	console.log($("body").css("backgroundColor","skyblue"));
+        })
+        $("div:nth-child(6)").click(function(){
+        	console.log($("body").css("backgroundColor","teal"));
+        })
+        $("div:nth-child(7)").click(function(){
+        	console.log($("body").css("backgroundColor","cornflowerblue"));
+        })
+        $("div:nth-child(8)").click(function(){
+        	console.log($("body").css("backgroundColor","palevioletred"));
+        })
+        $("div:nth-child(9)").click(function(){
+        	console.log($("body").css("backgroundColor","rebeccapurple"));
+        })
+        $("div:nth-child(10)").click(function(){
+        	console.log($("body").css("backgroundColor","hotpink"));
+        })
+    </script>
+</body>
+</html>
