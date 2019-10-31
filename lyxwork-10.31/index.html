@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <style>
+    	body{
+    		font-size:20px;
+    		font-weight: bold;
+    	}
+    	div{
+    		height: 20px;
+    	}
+    	span{
+    		color:red;
+    		font-size: 15px;
+    	}
+    	#num,#pic,#numa,#pica{
+    		width: 100px;
+    		height: 30px;
+    		font-size: 15px;
+    		margin-left: 10px;
+    	}
+    	#picb{
+    		width: 240px;
+    		height: 40px;
+    	}
+    	#btn{
+    		width:80px;
+    		height:50px;
+    		text-align: center;
+    		line-height: 20px;
+    	}
+    </style>
+</head>
+<body>
+     <input type="checkbox" name="" id="hua">华为mate20 :<span>￥1800</span> 
+     <input type="number" value=""  id="num"  placeholder="数量"> 
+     <input type="text" value="" id="pic"  placeholder="合计">
+     <div> </div>
+     <input type="checkbox" name="" id="xiao">小米8:<span>￥2100</span> 
+     <input type="number" value=""  id="numa" placeholder="数量"> 
+     <input type="text" value="" id="pica" placeholder="合计">
+     <div></div>
+     <button id="btn">合计</button>
+     <input type="text" value="" id="picb" placeholder="合计">
+    <script>
+    	//合计价钱
+        $("#num").click(function(){
+            var numo=$("#num").val()*1800;
+            $("#pic").val(numo);
+        })
+        $("#numa").click(function(){
+            var nump=$("#numa").val()*2100;
+            $("#pica").val(nump);
+        })
+       
+       //多选按钮
+        $("#hua").click(function(){
+             var hua= $("#hua").is(":checked")
+        })
+        $("#xiao").click(function(){
+              var xiao=$("#xiao").is(":checked");
+        })
+        
+        $("#btn").click(function(){
+        	if(hua=true,xiao=false){
+        		var numo=$('#pic').val();
+        		$("#picb").val(numo);
+        	}
+        	if(xiao=true,hua=false){
+        		var numt=$('#pica').val();
+        		$('#picb').val(numt);
+        	}
+        	if(hua=true,xiao=true){
+        		var numo=$('#pic').val();
+        		var numt=$('#pica').val();
+        		var numc=Number(numt)+Number(numo);
+        		$('#picb').val(numc);
+        	}
+        })
+    </script>
+</body>
+</html>
